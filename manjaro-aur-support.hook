@@ -1,0 +1,12 @@
+[Trigger]
+Operation = Install
+Type = Package
+Target = pacaur
+Target = yaourt
+Target = yay
+Target = trizen
+
+[Action]
+Description = AUR Disclaimer
+When = PostTransaction
+Exec = /usr/share/libalpm/scripts/manjaro-aur-support
