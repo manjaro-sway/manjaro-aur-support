@@ -22,12 +22,10 @@ if [[ ! -d /run/miso/bootmnt/manjaro ]]; then
             xdg-open https://wiki.manjaro.org/index.php/Arch_User_Repository
             # Ask for confirmation
             yad --title="WARNING" --window-icon=$manjaro --on-top --center --image=$warning --width=505 --fixed \
-              --text="\n\nRead these pages carefully before installing programs from the AUR\!\n\nPress \'OK\' to confirm that you have been informed\nabout the risks of yaourt/pacaur and the AUR.\n" --text-align=left --button=gtk-ok:0;
+              --text="\n\nRead these pages carefully before installing programs from the AUR\!\n\nPress \'OK\' to confirm that you have been informed\nabout the risks of using the AUR.\n" --text-align=left --button=gtk-ok:0;
             if [ $? == 1 ] ; then
                 exit 1
             fi
         fi
 	rm $autostart
 fi
-
-

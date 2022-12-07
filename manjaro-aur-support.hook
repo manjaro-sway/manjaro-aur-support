@@ -1,10 +1,7 @@
 [Trigger]
 Operation = Install
 Type = Package
-Target = pacaur
-Target = yaourt
 Target = yay
-Target = trizen
 
 [Action]
 Description = AUR Disclaimer

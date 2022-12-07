@@ -14,7 +14,7 @@ echo
 msg "Warning:
  -> Access to the AUR installed.
  -> Please open this link
- -> https://wiki.manjaro.org/index.php?title=AUR
+ -> https://wiki.manjaro.org/index.php/Arch_User_Repository
  -> and read our wiki page carefully!
 "
 

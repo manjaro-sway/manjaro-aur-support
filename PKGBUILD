@@ -2,28 +2,27 @@
 
 pkgname=manjaro-aur-support
 pkgver=0.6
-pkgrel=3
+pkgrel=4
 pkgdesc="Manjaro AUR support packages"
-_check=check-aur
-arch=(any)
-url=https://github.com/manjaro/packages-community
+arch=('any')
+url="https://gitlab.manjaro.org/packages/manjaro-aur-support"
+license=('unknown')
 depends=('yad' 'manjaro-icons')
 source=("$pkgname.hook"
-    "$pkgname.script"
-    "$_check"
-    "$_check.desktop"
-    'aur-warning.png')
-md5sums=('070a8a590e2c64b1272c264b5919d919'
-         '67c814ff1d3c10a1358e24bef9043ba8'
-         '4e6a4151016ff326f2b073e22b1ebc08'
-         'b06f747debd88e456e63ae0b1f4a046b'
-         '9ba5e40b801da994a909ae5fc1a36d24')
+        "$pkgname.script"
+        'check-aur'
+        'check-aur.desktop'
+        'aur-warning.png')
+sha256sums=('eeeee4a1b2c2526d3b6171b7475b0b611e196e1dac0f97ab023cf4464601e1c5'
+            '5e1842ff93addcecfa323ef5d0cc61a16d7472554cb59e745f156a5c2fac0c3d'
+            'c0b5611b1dae6cb56bc58ea6c9968c5e7a3fb08d5d31cfb5be436227afaecd4b'
+            'b6aa4e420252a91aad174c5116643135c3a60f3c3df842bb41b34e7969b9b6b8'
+            'd3d3adf942d6dad0cb2fbd89223d42c704b6d8e216349eb35c46f7094ebee624')
 
 package() {
-    install -Dm644 manjaro-aur-support.hook $pkgdir/usr/share/libalpm/hooks/manjaro-aur-support.hook
-    install -Dm755 manjaro-aur-support.script $pkgdir/usr/share/libalpm/scripts/manjaro-aur-support
-    install -Dm755 $_check $pkgdir/usr/bin/$_check
-    install -Dm644 $_check.desktop $pkgdir/etc/skel/.config/autostart/$_check.desktop
-    install -Dm644 aur-warning.png $pkgdir/usr/share/icons/hicolor/40x40/status/aur-warning.png
+  install -Dm644 "$pkgname.hook" -t "$pkgdir/usr/share/libalpm/hooks/"
+  install -Dm755 "$pkgname.script" "$pkgdir/usr/share/libalpm/scripts/$pkgname"
+  install -Dm755 check-aur -t "$pkgdir/usr/bin/"
+  install -Dm644 check-aur.desktop -t "$pkgdir/etc/skel/.config/autostart/"
+  install -Dm644 aur-warning.png -t "$pkgdir/usr/share/icons/hicolor/40x40/status/"
 }
-
